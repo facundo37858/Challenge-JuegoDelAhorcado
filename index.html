@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+</html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Juego del Ahorcado</title>
+
+</head>
+<body onkeydown="keyEvent(event)">
+    <header class="container-img-logo">
+        
+        <img src="./assets/img/logo/logo.svg" alt="logo">
+        
+    </header>
+    <div class="container-img">
+        <img  alt="ahorcado" id="img">
+    </div>
+    
+    <div class="check-word">
+    </div>
+    <div class="wrong-word">
+    </div>
+    <div class="container-btn">
+        <form action="javascript:void(0)">
+            <input type="button" value="New Game" class="btn game">
+            <input type="button" value="Exit Game" class=" btn exit">
+        </form>
+
+    </div>
+    <script src="./app.js"></script>
+</body>
+<html>
