@@ -1,4 +1,3 @@
-
 const game={
     words:['ALURA','BINGO','ORACLE','UNO','ARGENTINA'],
     // words:['ARGENTINA'],
@@ -29,15 +28,17 @@ function choiceRandomWord(){
 function updateLeters(leter){
     if(game.winWord.includes(leter)){
             
-
-        for(let i=0; i< game.winWord.length;i++){
-                
+       for(let i=0; i< game.winWord.length;i++){
+            
             if(game.winWord[i] === leter ){
    
                 if(!game.winLeters.filter(e => e.leter === leter).length > 0 ||
                     !game.winLeters.filter(e => e.i === i).length > 0
                 ){
                     game.winLeters=[...game.winLeters,{leter,i}]
+                    if(game.winLeters.length === game.winWord.length){
+                        showModal('Win Win Win')
+                    }
                         
                         
                 }
@@ -53,8 +54,8 @@ function updateLeters(leter){
             game.estate++
             updateEstateGame(game.estate)
         }
-            
-        return 
+        
+      return 
     }
                 
         return 
@@ -99,25 +100,70 @@ function  placeLetters(winLeters,wrongLeters,leterPress){
    return
 }
 function keyEvent(event) {
+    if(game.estate===5){
+        showModal('Game Over')
+     
+    }
+    
     if(game.estate < 6 && game.winLeters.length !== game.winWord.length  ){    
         const key = event.keyCode || event.which;
         const keychar = String.fromCharCode(key);
         const onlyLeters=new RegExp('[A-Z]', 'g');
-        // console.log(onlyLeters.test(keychar))
         if(keychar!= game.keyPress && onlyLeters.test(keychar)){
             game.keyPress=keychar
-
             updateLeters(keychar)
             placeLetters(game.winLeters,game.wrongLeters,keychar)
-            console.log(keychar,typeof keychar)
-            console.log(game)
-        }   
+         return
+        } 
+        return  
     }
+    
+      
+
 }
-function newGaem(){
+function newGame(){
     location.reload()
 }
-updateEstateGame()
-console.log(game)
-choiceRandomWord()
+function showModal(msj){
+    let modal = document.querySelector('.modal');
+    let mensaje= document.querySelector('.modal-titulo')
+    mensaje.textContent=msj
+    modal.classList.add('modal--show');
+    // setTimeout(()=>{modal.classList.remove('modal--show')},1000)
+    return
+}
 
+function backToHome(){
+   location.href='home.html'
+}
+function startGame(){
+    // alert('Home')
+    
+    location.href='index.html'
+}
+
+function addWord(){
+    
+    const word = document.querySelector("#mensaje").value;
+    if(word.length <= 8 && word.length > 0){
+        localStorage.setItem(`word`,`${word.toUpperCase()}`)
+        // game.words=[...game.words,word]
+        // startGame()
+        location.href='index.html'
+        return
+        
+    }
+    showModal(`The word must have at least 8 characters`)
+    return
+  
+ 
+}
+function updateWords(){
+    if(localStorage.getItem('word')){
+        game.words=[...game.words,localStorage.getItem('word')]
+    }
+}
+
+updateWords()
+updateEstateGame()
+choiceRandomWord()

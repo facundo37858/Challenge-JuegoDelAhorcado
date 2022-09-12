@@ -89,14 +89,71 @@ body{
     font-size: 1rem;
     width: 20.7rem;
     height: 4.2rem;
-    border:  1rem #0A3871;
+    /* border:  1rem #0A3871; */
+    cursor: pointer;
+    border: solid 0.1rem #0A3871;
+    text-align: center;
+    transition-duration: 0.4s;
     
 }
+.btn:hover {
+    transition-duration: 0.1s;
+    background-color: #E5E5E5;
+    color: #0A3871;
+    
+}
+
+
 
 .btn.exit{
     background-color: #E5E5E5;
     color: rgba(10, 56, 113, 1);
     font-weight: 400;
     border: solid 0.1rem #0A3871;
+    text-align: center;
+    transition-duration: 0.4s;
 
+}
+.btn.exit:hover {
+    transition-duration: 0.1s;
+    background-color: #0A3871;
+    color: #FFFFFF;
+}
+
+.modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #111111bd;
+    display: flex;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .6s .9s;
+}
+.modal-container{
+    background-color:#D8DFE8;
+    width: 90%;
+    margin: auto;
+    max-width: 30%;
+    max-height: 90%;
+    border-radius: 10px;
+    padding: 3em 2.5em;
+    display: grid;
+    gap: 1em;
+    place-items: center;
+    grid-auto-columns: 100%;
+}
+.modal-titulo{
+    font-size: 2rem;
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+}
+.modal--show{
+    opacity: 1;
+    pointer-events: unset;
+    transition: opacity .6s;
+    --transform: translateY(0);
+    --transition: transform .8s .8s;
 }

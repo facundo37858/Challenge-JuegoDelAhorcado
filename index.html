@@ -26,11 +26,19 @@
     </div>
     <div class="container-btn">
         <form action="javascript:void(0)">
-            <input type="button" value="New Game" onclick="newGaem()" class="btn game">
-            <input type="button" value="Exit Game" class=" btn exit">
+            <input type="button" value="New Game" onclick="newGame()" class="btn game">
+            <input onclick="backToHome()" type="button" value="Exit Game" class=" btn exit">
         </form>
 
     </div>
+    <section class="modal">
+        <div class="modal-container">
+            <h2 class="modal-titulo"></h2>
+            <button onclick="newGame()" class="btn game">New Game</button>
+            <button onclick="backToHome()" class=" btn exit">Back to Home</button>
+            <!-- <a href="#" class="cerrar_modal">X</a> -->
+        </div>
+    </section>
     <script src="./app.js"></script>
 </body>
 <html>

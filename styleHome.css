@@ -1,0 +1,36 @@
+section{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+.constainer-btn{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+}
+
+.btn.start{
+    width: 20rem;
+    height: 7rem;
+    text-align: center;
+    transition-duration: 0.4s;
+}
+
+.btn.addWord{
+    width: 17rem;
+    height: 4rem;
+    background-color: #E5E5E5;
+    color: rgba(10, 56, 113, 1);
+    font-weight: 400;
+    border: solid 0.1rem #0A3871;
+    text-align: center;
+    transition-duration: 0.4s;
+}
+
+.btn.addWord:hover {
+    transition-duration: 0.1s;
+    background-color: #0A3871;
+    color: #FFFFFF;
+}
