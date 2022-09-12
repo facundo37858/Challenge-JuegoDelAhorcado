@@ -27,7 +27,7 @@
     <div class="container-btn">
         <form action="javascript:void(0)">
             <input type="button" value="New Game" onclick="newGame()" class="btn game">
-            <input onclick="backToHome()" type="button" value="Exit Game" class=" btn exit">
+            <input onclick="backToHomeByGame()" type="button" value="Exit Game" class=" btn exit">
         </form>
 
     </div>
@@ -35,10 +35,11 @@
         <div class="modal-container">
             <h2 class="modal-titulo"></h2>
             <button onclick="newGame()" class="btn game">New Game</button>
-            <button onclick="backToHome()" class=" btn exit">Back to Home</button>
+            <button onclick="backToHomeByGame()" class=" btn exit">Back to Home</button>
             <!-- <a href="#" class="cerrar_modal">X</a> -->
         </div>
     </section>
-    <script src="./app.js"></script>
+    <script  src="./scripts/app.js"></script>
+    <!-- <script  src="./const.js"></script> -->
 </body>
 <html>

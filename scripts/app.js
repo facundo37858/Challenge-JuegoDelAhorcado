@@ -1,5 +1,5 @@
 const game={
-    words:['ALURA','BINGO','ORACLE','UNO','ARGENTINA'],
+    words:['ALURA','BINGO','ORACLE','UNO','ARGENTINA','CABALLO','TELEFONO','AUTO','ROJO','AZUL','LIBRO'],
     // words:['ARGENTINA'],
     estate:0,
     winWord:[],
@@ -14,7 +14,7 @@ const htmlElemnts={
     listWrongLeters: document.getElementsByClassName('wrong-word'),
 }
 function updateEstateGame(estate=0){
-    htmlElemnts.estateImage.src='assets/img/estates/e'+estate+'.png'
+    htmlElemnts.estateImage.src='./assets/img/estates/e'+estate+'.png'//./assets/img/logo/logo.svg
     return estate
 }
 function choiceRandomWord(){
@@ -136,6 +136,10 @@ function showModal(msj){
 function backToHome(){
    location.href='home.html'
 }
+function backToHomeByGame(){
+    location.href='./views/home.html'
+ }
+backToHomeByGame
 function startGame(){
     // alert('Home')
     
@@ -167,3 +171,4 @@ function updateWords(){
 updateWords()
 updateEstateGame()
 choiceRandomWord()
+

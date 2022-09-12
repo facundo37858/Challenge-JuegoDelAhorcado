@@ -111,6 +111,7 @@ body{
     font-weight: 400;
     border: solid 0.1rem #0A3871;
     text-align: center;
+    margin-top: 2rem;
     transition-duration: 0.4s;
 
 }
@@ -118,6 +119,7 @@ body{
     transition-duration: 0.1s;
     background-color: #0A3871;
     color: #FFFFFF;
+    
 }
 
 .modal{

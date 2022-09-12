@@ -1,6 +1,6 @@
 function startGame(){
     // alert('Home')
-    location.href='index.html'
+    location.href='../index.html'
 }
 
 function addWord(){
